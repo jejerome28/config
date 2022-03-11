@@ -1,3 +1,4 @@
+:filetype plugin on
 :set number
 :set relativenumber
 :set autoindent
@@ -6,6 +7,7 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set makeprg=make\ -C\ ../build\ -j9
 
 call plug#begin()
 
@@ -24,5 +26,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-
+nnoremap cpp :!g++ %:t -o %:t:r && ./%:t:r<CR>
+nnoremap py :!python3 %<CR>
+nnoremap cs :!dotnet run<CR>
